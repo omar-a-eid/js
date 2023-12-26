@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="./cal.html">Calculator</a>
+    <script>
+      function getUserName() {
+        let firstName = prompt("What is your first name?");
+        let lastName = prompt("What is your last name?");
+        let birthYear = prompt("What is your birth year?");
+
+        let fullName = firstName + " " + lastName;
+        let isFullName = confirm(`Is your full name ${fullName} ?`);
+
+        if (isFullName) {
+          let currentYear = new Date().getFullYear();
+          let age = currentYear - birthYear;
+
+          alert(`Welcome ${fullName} you are ${age} years old`);
+        } else {
+          getUserName();
+        }
+      }
+      getUserName();
+    </script>
+  </body>
+</html>
