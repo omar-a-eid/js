@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      #login-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 600px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        color: #555;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .set-btn {
+        background-color: #45a049;
+      }
+      .clear-btn {
+        background-color: #af4c54;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="hour-input">Hours:</label>
+        <input
+          type="number"
+          id="hour-input"
+          class="time-input"
+          min="0"
+          max="23"
+          placeholder="0"
+        />
+      </div>
+      <div>
+        <label for="minute-input">Minutes:</label>
+        <input
+          type="number"
+          id="minute-input"
+          class="time-input"
+          min="0"
+          max="59"
+          placeholder="0"
+        />
+      </div>
+      <div>
+        <label for="second-input">Seconds:</label>
+        <input
+          type="number"
+          id="second-input"
+          class="time-input"
+          min="0"
+          max="59"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="set-buttons">
+        <button class="set-btn" onclick="setAlarm()">Set Alarm</button>
+        <button class="clear-btn" onclick="clearAlarm()">Clear Alarm</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
