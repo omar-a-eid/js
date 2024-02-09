@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetchUserData();
+      });
+
+      function fetchUserData() {
+        fetch("https://dummyjson.com/users")
+          .then((response) => response.json())
+          .then((data) => displayUserData(data.users))
+          .catch((error) => console.error("Error fetching user data:", error));
+      }
+
+      function displayUserData(users) {
+        let container = document.getElementById("container");
+
+        users.forEach((user) => {
+          let userDiv = document.createElement("div");
+          userDiv.innerHTML = `
+          <img src="${user.image}" alt="User Avatar">
+          <p>Email: ${user.email}</p>
+          <hr>
+        `;
+          container.appendChild(userDiv);
+        });
+      }
+    </script>
+  </body>
+</html>
